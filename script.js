@@ -41,4 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.padding = '1rem 5%';
         }
     });
+    // Social Buttons "Coming Soon"
+    const socialBtns = document.querySelectorAll('.social-btn.coming-soon');
+    socialBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const platform = btn.getAttribute('data-platform');
+            const confirmAction = confirm(`O nosso ${platform} está sendo preparado com muito carinho! \n\nGostaria de falar conosco pelo WhatsApp enquanto isso?`);
+
+            if (confirmAction) {
+                window.open('https://wa.me/5511913608217?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20as%20ofertas!', '_blank');
+            }
+        });
+    });
 });

@@ -247,28 +247,13 @@ footer {
     border-top: 1px solid #333;
 }
 
-.social-links {
-    margin-bottom: 1rem;
+transform: translateY(-50px);
 }
 
-.social-links a {
-    color: var(--primary-color);
-    margin: 0 10px;
-    font-size: 1.5rem;
-    text-decoration: none;
+to {
+    opacity: 1;
+    transform: translateY(0);
 }
-
-/* Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeInUp {
@@ -309,4 +294,123 @@ footer {
         display: none;
         /* Simple hide for now, could add hamburger */
     }
+}
+
+/* Footer Updates */
+footer {
+    background-color: #000;
+    padding: 3rem 5%;
+    color: var(--text-color);
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contact-section,
+.social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #25D366;
+    color: #25D366;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-whatsapp-btn:hover {
+    background-color: #25D366;
+    color: white;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-btn:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.coming-soon-text {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #222;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Tooltip for Coming Soon */
+.social-btn.coming-soon::after {
+    content: "Em breve";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.social-btn.coming-soon:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
